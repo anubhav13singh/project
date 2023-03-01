@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ques-20</title>
+</head>
+<body>
+    <!-- In the following shopping cart add, remove, edit items
+    => const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
+    - add 'Meat' in the beginning of your shopping cart if it has not been already added
+    - add Sugar at the end of your shopping cart if it has not been already added
+    - remove 'Honey'
+    - modify Tea to 'Green Tea' -->
+
+    <script>
+       let shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey'];
+
+       shoppingCart.unshift('meat');
+       console.log(shoppingCart);
+
+       shoppingCart.push('sugar');
+       console.log(shoppingCart);
+
+       let honey = shoppingCart.slice(4, 5 );
+       console.log(honey);
+
+
+       shoppingCart[3] = 'Green Tea';
+       console.log(shoppingCart);
+
+       
+
+      </script>
+</body>
+</html>

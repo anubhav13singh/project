@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ques-17</title>
+</head>
+<body>
+    <!-- Write a program which tells the number of days in a month -->
+    <script>
+       let month = prompt('enter a month in number eg 1 for jan');
+        let year = prompt('enter year');
+        if ( month <= 0 || month > 12){
+            alert('enter correct month')
+        }
+
+        else if ((month === 1) || (month === 01) || (month === 3) || (month === 03) || (month === 5) || (month === 05) || (month === 7) || (month === 07) || (month === 8) || (month === 08) || (month === 10) || (month === 12))
+         {
+            console.log(`Number of days in ${month} month are 31`);
+        }
+
+        else if ((month === 2 || month === 02) && (year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0)) 
+        {
+       console.log(`Number of days in ${month} month are 29`);
+        }
+
+       else if (month === 2 || month === 02) 
+      {
+      console.log(`Number of days in ${month} month are 28`);
+      }
+        else if ((month === 4) || (month === 04) || (month === 6) || (month === 06) || (month === 9) || (month === 09) || (month === 11)) 
+        {
+            console.log(`Number of days in ${month} month are 30`);
+        }
+    </script>
+</body>
+</html>
