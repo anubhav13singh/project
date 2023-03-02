@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather report</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>WEATHER REPORT</h1>
+        <form onsubmit="getData(event)">
+            <input id="inputBox" type="text" placeholder="enter city name" >
+            <button>search</button>
+        </form>
+    </div>
+    
+
+    <section>
+        
+        <div class="city">
+           <div>
+              <p >city name</p>
+              <p id="cityName">____</p>
+           </div>
+           <div>
+              <p >state Name </p>
+              <p id="stateName">_____</p>
+           </div>
+            <div>
+                <p >country Name </p>
+                <p id="countryName">____</p>
+           </div>
+           
+           <div>
+            <p >humidity </p><br>
+            <p id="humidity">____</p>
+            </div>
+       
+            <div>
+                <p >wind Speed</p>
+                <p id="windSpeed">___</p>
+            </div>
+
+        </div>
+
+        <div class="temp">
+              <div>
+                <p id="temp"></p>
+            </div>
+            </div>
+                 <img width="30px" id="logo" src="" alt="icon">
+                <p id="weatherStatus">___</p>
+            </div>
+        </div>
+
+       
+
+   </section>
+    
+
+   <script src="./script.js"></script> 
+</body>
+</html>

@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+}
+html{
+    height: 100%;
+}
+body{
+    background-image: url(./images/noaa-kcvlb727mn8-unsplash.jpg);
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+}
+ .header h1{
+    color: rgb(211, 219, 243);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ }  
+  input {
+    outline: none;
+    border: none;
+    border-radius: 60px;
+    padding: 10px 20px;
+    background-color: rgb(222, 228, 222);
+} 
+button{
+    outline: none;
+    border: none;
+    border-radius: 60px;
+    padding: 10px 20px;
+    background-color: aliceblue;
+}
+/* -------------------------------------------------------- */
+
+
+
+    
