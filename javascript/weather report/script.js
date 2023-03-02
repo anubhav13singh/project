@@ -5,7 +5,7 @@ const stateName = document.getElementById("stateName");
 const cityName = document.getElementById("cityName");
 const humidity = document.getElementById("humidity");
 const windSpeed = document.getElementById("windSpeed");
-const temperature = document.getElementById("temperature");
+const temp = document.getElementById("temp");
 const logo = document.getElementById("logo");
 const weatherStatus = document.getElementById("weatherStatus");
 
@@ -29,7 +29,7 @@ const getData = async (event) =>{
     stateName.innerHTML = data.location.region;
     humidity.innerHTML = data.current.humidity;
     windSpeed.innerHTML = data.current.wind_kph;
-    temperature.innerHTML = data.current.temp_c;
+    temp.innerHTML = data.current.temp_c;
     weatherStatus.innerHTML = data.current.condition.text;
     logo.src = data.current.condition.icon;
 

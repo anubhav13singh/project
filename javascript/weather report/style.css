@@ -7,10 +7,7 @@ html{
     height: 100%;
 }
 body{
-    background-image: url(./images/noaa-kcvlb727mn8-unsplash.jpg);
-    background-position: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: repeating-linear-gradient(lightblue,lightgrey);
 }
 .header{
     display: flex;
