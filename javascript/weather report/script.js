@@ -1,4 +1,4 @@
-let data;
+ let data;
 const inputBox = document.getElementById("inputBox");
 const countryName = document.getElementById("countryName");
 const stateName = document.getElementById("stateName");
