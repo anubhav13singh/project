@@ -4,6 +4,8 @@
     background-color: black;
     color: white;
     width: 100%;
+    cursor: pointer;
+
 }
 .home-search{
     margin-top: 10px 0;
@@ -44,18 +46,22 @@
 img{
     width: 250px;
     transition: all 0.4s ease;
+    border-radius: 5px;
+
 }
 
 .home-meals {
     text-align: center;
     margin: 10px;
     background-color: #444343;
-    box-shadow: 1px 0.5px 5px grey;
+    box-shadow: 0.5px 0.5px 5px grey;
+    border-radius: 5px;
 }
 .home-meals:hover{
     transform: scale(1.05);
+
 }
 
 .home-meals h4{
-    padding: 5px;
+    padding: 10px;
 }
