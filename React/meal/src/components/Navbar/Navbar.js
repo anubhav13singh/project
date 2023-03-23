@@ -10,7 +10,7 @@ function Navbar() {
         </div>
         <div className='navbar-link'>
             <ul>
-               <NavLink to ='/HomePage'> <li>Home</li> </NavLink>
+               <NavLink to ='/'> <li>Home</li> </NavLink>
                <NavLink to = '/Category'> <li>Categories</li></NavLink>
                <NavLink to = "/RandomMeal"> <li>Random</li></NavLink>
                 

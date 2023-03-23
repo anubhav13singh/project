@@ -1,4 +1,4 @@
-import React, { useState, useContext, useCallback} from 'react'
+import React, { useState, useContext, useCallback, useEffect} from 'react'
 import './HomePage.css'
 import { mycontext } from '../Context/Context';
 
@@ -9,12 +9,17 @@ function HomePage() {
 
   const {fetchHomepageMeals,meals} = useContext(mycontext);
 
-    const fetchMealsHandler =  useCallback(() =>{
+  //   const fetchMealsHandler =  useCallback(() =>{
+  //   fetchHomepageMeals(searchTerm)
+  // },[searchTerm,fetchHomepageMeals])
+
+  const fetchMealsHandler =  useEffect(() =>{
     fetchHomepageMeals(searchTerm)
   },[searchTerm,fetchHomepageMeals])
 
+
   // searchTerm coz it ll run rvery time when we type{depedency}
-  
+ 
 
   return (
     <div className='home'>
@@ -30,8 +35,9 @@ function HomePage() {
       <div className='home-meals-grid'>
         {meals ? meals.map((m) =>
           <div className='home-meals'key={m.idMeal}> 
-           <img src= {m.strMealThumb} alt='#'/>
+           <img src= {m.strMealThumb} alt='$'/>
            <h4>{m.strMeal}</h4>
+           {/* <h4>{m.strYoutube}</h4> */}
            </div>)  : (<h2>No meals found! Try another meal...</h2>)
         }
   

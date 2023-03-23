@@ -14,17 +14,17 @@ function App() {
 
       <Routes>
 
-      <Route exact path='/HomePage' element={<HomePage/>}/>
+      <Route exact path='/' element={<HomePage/>}/>
       <Route exact path='/Category' element={<Category/>}/>
       <Route exact path='/RandomMeal' element={<RandomMeal/>}/>
 
       
       </Routes>
       
-      <Footer />
 
-
+    <Footer />
     </BrowserRouter>
+
     </div>
   )
 }
