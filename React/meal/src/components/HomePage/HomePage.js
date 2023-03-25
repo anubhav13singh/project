@@ -1,9 +1,12 @@
 import React, { useState, useContext, useCallback, useEffect} from 'react'
 import './HomePage.css'
 import { mycontext } from '../Context/Context';
+import { useNavigate } from 'react-router-dom';
 
 
 function HomePage() {
+
+let navigate = useNavigate();
 
   const [searchTerm, SetsearchTerm] = useState('');
 
@@ -35,9 +38,11 @@ function HomePage() {
       <div className='home-meals-grid'>
         {meals ? meals.map((m) =>
           <div className='home-meals'key={m.idMeal}> 
-           <img src= {m.strMealThumb} alt='$'/>
+           <img src= {m.strMealThumb} alt='$' />
            <h4>{m.strMeal}</h4>
-           {/* <h4>{m.strYoutube}</h4> */}
+          
+           <button key={m.idMeal} className='home-meals'onClick={() =>{navigate(`/${m.idMeal}`)}}>Ingridients</button>
+    
            </div>)  : (<h2>No meals found! Try another meal...</h2>)
         }
   

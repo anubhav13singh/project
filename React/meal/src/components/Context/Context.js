@@ -13,7 +13,7 @@ export const Appcontext = () =>{
     const fetchHomepageMeals = useCallback((searchTerm) =>{
         axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`)
        .then(res =>{
-        // console.log(res.data.meals);
+        console.log(res.data.meals);
         Setmeals(res.data.meals);
        }
         )

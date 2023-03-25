@@ -52,16 +52,15 @@ img{
 
 .home-meals {
     text-align: center;
-    margin: 10px;
+    margin: 15px;
     background-color: #444343;
     box-shadow: 0.5px 0.5px 5px grey;
     border-radius: 5px;
 }
 .home-meals:hover{
     transform: scale(1.05);
-
 }
 
 .home-meals h4{
-    padding: 10px;
+    margin: 10px;
 }

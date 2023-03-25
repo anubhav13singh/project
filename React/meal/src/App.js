@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Category from './components/Categories/Category'
 import RandomMeal from './components/RandomMeal/RandomMeal'
 import HomePage from './components/HomePage/HomePage'
+import Ingridients from './components/HomePage/Ingridients'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route exact path='/' element={<HomePage/>}/>
       <Route exact path='/Category' element={<Category/>}/>
       <Route exact path='/RandomMeal' element={<RandomMeal/>}/>
+      <Route exact path='/:id' element={<Ingridients/>}/>
 
       
       </Routes>

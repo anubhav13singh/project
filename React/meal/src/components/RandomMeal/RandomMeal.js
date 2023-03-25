@@ -17,7 +17,7 @@ function RandomMeal() {
           <div className='random-grid-btn'>
             <img src={r.strMealThumb} alt= '#'/>
               <h4>{r.strMeal}</h4>
-            <button onClick={randomcategory}>Generate another Meal</button>
+            <button className='button' onClick={randomcategory}>Generate another Meal</button>
           </div>
 
           <div className='random-instructrion'>
