@@ -1,0 +1,82 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: beige;
+}
+.container{
+    width: 90%;
+    margin: auto;
+    padding-top: 100px;
+    display: flex;
+}
+.left-content .right-content{
+    flex-basis: 50%;
+}
+.left-content{
+    display: grid;
+    grid-template-columns: 320px 320px;
+    gap: 10px;
+}
+.card{
+    width: 300px;
+    background-color: aqua;
+    border-radius: 1rem;
+    box-shadow: 2px 3px 5px black;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.right-content{
+    width: 50%;
+    text-align: center;
+    color: rgb(55, 155, 243);
+    position: fixed;
+    top: 100px;
+    right: 10px;
+}
+.right-content img {
+    margin: 2rem;
+}
+.base-stat{
+    margin-top: 2rem;
+}
+.right-content h1{
+    text-transform: capitalize;
+    letter-spacing: 1px;
+
+}
+.abilities{
+    width: 30%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1rem;
+}
+.abilities .group{
+    background-color: #ff7373;
+    color: aliceblue;
+    padding: 10px;
+    margin: 10px;
+}
+.base-stat{
+    margin-top: 2rem;
+}
+.btn{
+    display: flex;
+    margin-top: 20px;
+    gap: 20px;
+}
+.btn button{
+    outline: none;
+    width: 100px;
+    padding: 10px 15px;
+    background-color: azure;
+    border: none;
+    color: grey;
+    border-radius: 10px;
+}

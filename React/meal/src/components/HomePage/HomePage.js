@@ -37,6 +37,7 @@ let navigate = useNavigate();
 
       <div className='home-meals-grid'>
         {meals ? meals.map((m) =>
+        
           <div className='home-meals'key={m.idMeal}> 
            <img src= {m.strMealThumb} alt='$' />
            <h4>{m.strMeal}</h4>
