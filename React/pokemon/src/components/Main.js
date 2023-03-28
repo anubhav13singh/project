@@ -50,15 +50,15 @@ function Main() {
                  infopokemon={(poke)=>SetpokeDex(poke)}/>
 
                  <div className='btn'>
-                    <button onClick={()=>{
+                   {previous &&  <button onClick={()=>{
                         Seturl(previous)
                         SetpokeData([])
-                    }}>previous</button>
+                    }}>previousss</button>}
 
-                    <button onClick ={()=>{
+                    {next && <button onClick ={()=>{
                         Seturl(next)
                         SetpokeData([])
-                    }}>next</button>
+                    }}>next</button>}
                  </div>
         </div>
         <div className='right-container'>
