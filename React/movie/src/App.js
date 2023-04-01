@@ -1,33 +1,56 @@
-import React from 'react'
+import axios from 'axios';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
-import Navbar from './components/navbar/Navbar'
-import Trending from './components/Trending/Trending'
-import Movies from './components/Movie/Movies'
-import Search from './components/Search/Search'
-import TvSeries from './components/TvSeries/TvSeries'
+
+import React,{useEffect} from 'react'
+import {fetchDataFromApi} from './utils/api'
+import { getApiCongiguration } from './store/homeSlice';
+import { useSelector, useDispatch } from 'react-redux'
+
+import Footer from "./components/footer/Footer"
+import Header from "./components/header/Header"
+import Home from "./pages/home/Home"
+import Details from "./pages/details/Details"
+import Explore from "./pages/explore/Explore"
+import Search from "./pages/search/search"
+import PageNotFound from "./pages/404/pageNotFound"
+
 
 function App() {
+  
+  // const url = useSelector((state) => state.)
+  const dispatch = useDispatch();
+  const {url} = useSelector((state)=> state.home);
+  console.log(url);
+
+function apiTest(){
+  fetchDataFromApi('/movie/popular')
+  // axios.get(`
+  // https://api.themoviedb.org/3/movie/popular?api_key=ae98b4f1a1445b734eaa4779c4fc1724`)
+  .then((res)=>{
+    console.log(res);
+    dispatch(getApiCongiguration(res))
+  })
+
+}
+
+useEffect(()=>{
+  apiTest()
+},[]);
+
   return (
-    <div>
-      <BrowserRouter>
-      <Navbar />
+    <BrowserRouter>
+    {/* <Header /> */}
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/:mediaType/:id' element={<Details/>}/>
+      <Route path='/Search/:query' element={<Search/>}/>
+      <Route path='/explore/:MediaType' element={<Explore/>}/>
+      <Route path='*' element={<PageNotFound/>}/>
       
-      <Routes>
-
-        <Route exact path='/' element={<Trending/>} />
-        <Route exact path='/Movies' element={<Movies/>} />
-        <Route exact path='/TvSeries' element={<TvSeries/>} />
-        <Route exact path ='/Search' element={<Search/>} />
-
-      </Routes>
-
-      </BrowserRouter>
-      
-  
-  
-        
-
-    </div>
+    </Routes>
+    {/* <Footer/>
+     */}
+    </BrowserRouter>
   )
 }
 

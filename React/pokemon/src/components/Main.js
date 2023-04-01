@@ -14,6 +14,7 @@ function Main() {
 
     const pokeFun =async() =>{
         Setloading(true)
+
         const res = await axios.get(url)
         console.log(res.data.results);
         Setnext(res.data.next)
@@ -55,7 +56,8 @@ function Main() {
                         SetpokeData([])
                     }}>previousss</button>}
 
-                    {next && <button onClick ={()=>{
+                    {next &&
+                     <button onClick ={()=>{
                         Seturl(next)
                         SetpokeData([])
                     }}>next</button>}
