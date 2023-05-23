@@ -1,0 +1,27 @@
+*{
+    scroll-behavior: smooth;
+}
+.App{
+    min-height: 75vh;
+    background-color: #394439;
+    color: aliceblue;
+     padding-top: 90px; 
+    padding-bottom: 70px;
+}
+.pageTitle{
+    padding: 10px 20px;
+    display: block;
+    text-transform: uppercase;
+    justify-content:flex-start;
+    font-size: 2vw;
+}
+@media (max-width:700px) {
+    .App{
+        padding-top: 70px ;
+    }
+}
+@media (max-width:700px) {
+    .pageTitle{
+    font-size: 5vw;
+}
+}

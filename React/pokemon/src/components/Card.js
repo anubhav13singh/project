@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Card(pokemon,loading,infopokemon) {
+function Card({pokemon,loading,infopokemon}) {
   console.log(pokemon);
 
   return (

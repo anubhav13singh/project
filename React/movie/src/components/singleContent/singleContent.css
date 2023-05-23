@@ -1,0 +1,37 @@
+.media{
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    /* padding: 5px; */
+    margin: 0px 5px;
+    background-color: #282c34;
+    border-radius: 10px;
+    position: relative;
+    transition: ease;
+}
+.media:hover{
+    background-color: #444343;
+    color: rgb(37, 37, 37);
+    transform: scale(1.03);
+}
+@media (max-width: 550px){
+    .media{
+        width: 46%;
+    }
+}
+.poster{
+    border-radius: 10px;
+    padding: 1px;
+}
+.title{
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px ;
+}
+.subtitle{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3px 3px;
+}

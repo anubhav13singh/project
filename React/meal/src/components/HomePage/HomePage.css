@@ -43,7 +43,7 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
-img{
+.img{
     width: 250px;
     transition: all 0.4s ease;
     border-radius: 5px;

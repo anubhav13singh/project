@@ -3,7 +3,9 @@ import './header.css'
 
 function Header() {
   return (
-    <div>Header</div>
+    
+    <span className='header' onClick={()=>window.scroll(0,0)} >Entertainment Hub</span>
+    
   )
 }
 

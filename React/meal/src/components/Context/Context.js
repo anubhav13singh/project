@@ -22,7 +22,7 @@ export const Appcontext = () =>{
     const fetchCategory = useCallback(() => {
         axios.get(`https://www.themealdb.com/api/json/v1/1/categories.php`)
         .then(res =>{
-            // console.log(res.data.categories);
+            console.log(res.data.categories);
             Setcategories(res.data.categories);
         })
     }, [])

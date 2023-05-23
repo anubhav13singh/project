@@ -1,58 +1,38 @@
-import axios from 'axios';
-import {BrowserRouter,Routes,Route} from 'react-router-dom'
-
-import React,{useEffect} from 'react'
-import {fetchDataFromApi} from './utils/api'
-import { getApiCongiguration } from './store/homeSlice';
-import { useSelector, useDispatch } from 'react-redux'
-
-import Footer from "./components/footer/Footer"
-import Header from "./components/header/Header"
-import Home from "./pages/home/Home"
-import Details from "./pages/details/Details"
-import Explore from "./pages/explore/Explore"
-import Search from "./pages/search/search"
-import PageNotFound from "./pages/404/pageNotFound"
-
+import React from 'react'
+import Header from './components/header/Header'
+import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Container } from '@mui/material'
+import Trending from './Pages/trending/Trending'
+import Movie from './Pages/movies/Movie'
+import Search from './Pages/search/Search'
+import Series from './Pages/series/Series'
+import Footer from './components/footer/Footer'
+import Details from './Pages/details/Details'
 
 function App() {
-  
-  // const url = useSelector((state) => state.)
-  const dispatch = useDispatch();
-  const {url} = useSelector((state)=> state.home);
-  console.log(url);
-
-function apiTest(){
-  fetchDataFromApi('/movie/popular')
-  // axios.get(`
-  // https://api.themoviedb.org/3/movie/popular?api_key=ae98b4f1a1445b734eaa4779c4fc1724`)
-  .then((res)=>{
-    console.log(res);
-    dispatch(getApiCongiguration(res))
-  })
-
-}
-
-useEffect(()=>{
-  apiTest()
-},[]);
-
   return (
+    <>
     <BrowserRouter>
-    {/* <Header /> */}
-    <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/:mediaType/:id' element={<Details/>}/>
-      <Route path='/Search/:query' element={<Search/>}/>
-      <Route path='/explore/:MediaType' element={<Explore/>}/>
-      <Route path='*' element={<PageNotFound/>}/>
-      
-    </Routes>
-    {/* <Footer/>
-     */}
+      <Header/>
+    <div className='App'>
+      <Container>
+        <Routes>
+          <Route exact path='/' element={<Trending/>}/>
+          <Route exact path='/Movies' element={<Movie/>}/>
+          <Route exact path='/Search' element={<Search/>}/>
+          <Route exact path='/Tv Series' element={<Series/>}/>
+          <Route  path='`/${media_type}/${id}` 'element={<Details/>}/>
+
+        </Routes>
+
+      </Container>
+    </div>
+    <Footer />
+
     </BrowserRouter>
+    </>
   )
 }
 
-
-export default App
+export default App;

@@ -1,7 +1,8 @@
-import React, { useState, useContext, useCallback, useEffect} from 'react'
+import React, { useState, useContext, useEffect} from 'react'
 import './HomePage.css'
 import { mycontext } from '../Context/Context';
 import { useNavigate } from 'react-router-dom';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 
 function HomePage() {
@@ -9,6 +10,7 @@ function HomePage() {
 let navigate = useNavigate();
 
   const [searchTerm, SetsearchTerm] = useState('');
+  const [loading, SetLoading] = useState(true);
 
   const {fetchHomepageMeals,meals} = useContext(mycontext);
 
@@ -18,6 +20,10 @@ let navigate = useNavigate();
 
   const fetchMealsHandler =  useEffect(() =>{
     fetchHomepageMeals(searchTerm)
+    setTimeout(() => {
+      SetLoading(false)
+    }, 1500);
+    
   },[searchTerm,fetchHomepageMeals])
 
 
@@ -25,6 +31,16 @@ let navigate = useNavigate();
  
 
   return (
+    <>
+    {
+      loading ? 
+     <div className='home-meals'>
+       <SkeletonTheme baseColor='#202020' highlightColor='#444'>
+        <Skeleton height={250} duration={2}/>
+      </SkeletonTheme>
+     </div>
+      :
+    
     <div className='home'>
 
       <div className='home-search'>
@@ -36,22 +52,27 @@ let navigate = useNavigate();
       </div>
 
       <div className='home-meals-grid'>
+      
         {meals ? meals.map((m) =>
         
           <div className='home-meals'key={m.idMeal}> 
-           <img src= {m.strMealThumb} alt='$' />
+           <img className='img' src= {m.strMealThumb} alt='$' />
            <h4>{m.strMeal}</h4>
           
            <button key={m.idMeal} className='home-meals'onClick={() =>{navigate(`/${m.idMeal}`)}}>Ingridients</button>
     
-           </div>)  : (<h2>No meals found! Try another meal...</h2>)
-        }
+           </div>) 
+           : (<h2>No meals found! Try another meal...</h2>)
+          }
+          
   
       </div>
-
-
     </div>
+
+      }
+    </>
+    
   )
-}
+  }
 
 export default HomePage
