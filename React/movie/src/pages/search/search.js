@@ -1,6 +1,6 @@
-import { Button, Tab, Tabs, TextField } from '@mui/material'
-import React, { useState, useEffect} from 'react'
+import { Button, Tab, Tabs, TextField} from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
+import React, { useState, useEffect} from 'react'
 import axios from 'axios';
 import SingleContent from '../../components/singleContent/SingleContent';
 import CustomPagination from '../../components/pagination/CustomPagination';
@@ -16,7 +16,7 @@ function Search() {
   const fetchSearch = async() => {
     const {data} =  await axios.get(`https://api.themoviedb.org/3/search/${type? "tv" : 'movie'}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${search}&page=${page}`)
    
-    console.log(data);
+    // console.log(data);
     setContent(data.results)
     setNumofPages(data.total_pages)
   }
@@ -29,19 +29,21 @@ function Search() {
   return (
     <div >
       <div style={{display:"flex"}}>
-       <TextField
-       style={{width:'300px',flex: 1}}
-        className='searchBox' 
-        label="search" variant="standard" 
+       <TextField 
+       style={{flex: 1}}
+       className='SearchBox'
+       label= 'search'
+       variant='filled'
        onChange={(e) => SetSearch(e.target.value)}
        />
         <Button varient= "contained"
-        style={{margin : 10 }}
+        style={{marginLeft : 10 }}
         onClick={fetchSearch} >
-        <SearchIcon/>
-      .
+        <SearchIcon />
         </Button>
       </div>
+
+
         <Tabs value={type}
          indicatorColor="primary" 
          textColor= "primary"
@@ -49,10 +51,12 @@ function Search() {
           setType(newValue);
           setPage(1)
          }}
-         style={{padding: 5}}
+         style={{paddingBottom: 25}}
         >
+
           <Tab style={{width: '40%'}} label="Search Movies"/>
           <Tab style={{width: '40%'}} label="Search Tv Series"/>
+
         </Tabs>
 
 
@@ -67,8 +71,9 @@ function Search() {
              vote = {c.vote_average }
               />)
             }
-            {search && !content &&
-             (type ? <h2>No Series Found</h2> : <h2>NOMovies Found</h2>)
+            {search && !content ?
+             (type ? <h2>No Series Found</h2> : <h2>NO Movies Found</h2>) 
+             :<></>
             }
           
         </div>

@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react'
+import React, {  useContext, useEffect} from 'react'
 import { mycontext } from '../Context/Context';
 import './Category.css'
 

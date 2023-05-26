@@ -5,7 +5,7 @@ import App from '../../App';
 export const mycontext = createContext();
 
 export const Appcontext = () =>{
-    const [meals, Setmeals] = useState([]);
+    const [meals, Setmeals] = useState('');
     const [Categories, Setcategories] = useState([]);
     const [randomMeal, SetrandomMeal] = useState([]);
 
@@ -13,16 +13,16 @@ export const Appcontext = () =>{
     const fetchHomepageMeals = useCallback((searchTerm) =>{
         axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`)
        .then(res =>{
-        console.log(res.data.meals);
+        // console.log(res.data.meals);
         Setmeals(res.data.meals);
        }
         )
-    }, [])
+    },[])
 
     const fetchCategory = useCallback(() => {
         axios.get(`https://www.themealdb.com/api/json/v1/1/categories.php`)
         .then(res =>{
-            console.log(res.data.categories);
+            // console.log(res.data.categories);
             Setcategories(res.data.categories);
         })
     }, [])

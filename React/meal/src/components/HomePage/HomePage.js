@@ -3,6 +3,7 @@ import './HomePage.css'
 import { mycontext } from '../Context/Context';
 import { useNavigate } from 'react-router-dom';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import AlphaMeal from './AlphaMeal';
 
 
 function HomePage() {
@@ -24,7 +25,7 @@ let navigate = useNavigate();
       SetLoading(false)
     }, 1500);
     
-  },[searchTerm,fetchHomepageMeals])
+  },[searchTerm, fetchHomepageMeals])
 
 
   // searchTerm coz it ll run rvery time when we type{depedency}
@@ -53,23 +54,26 @@ let navigate = useNavigate();
 
       <div className='home-meals-grid'>
       
-        {meals ? meals.map((m) =>
-        
-          <div className='home-meals'key={m.idMeal}> 
+      { 
+         meals ? meals.map((m) =>
+         
+         <div className='home-meals'key={m.idMeal}> 
            <img className='img' src= {m.strMealThumb} alt='$' />
            <h4>{m.strMeal}</h4>
           
            <button key={m.idMeal} className='home-meals'onClick={() =>{navigate(`/${m.idMeal}`)}}>Ingridients</button>
     
-           </div>) 
+           </div>)
            : (<h2>No meals found! Try another meal...</h2>)
           }
           
   
       </div>
-    </div>
+      <AlphaMeal />
 
+    </div>
       }
+
     </>
     
   )

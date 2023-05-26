@@ -12,14 +12,14 @@ const SingleContent =({poster,id,title,date,media_type,vote}) => {
   useEffect(()=>{
     setTimeout(() => {
       setIsLoading(false)
-    }, 1000);
+    }, 1500);
   })
 
   return (
 <>
     {
       isloading ?
-      <div className='media'>
+      <div className='trending'>
           <SkeletonTheme baseColor = '#202020' highlightColor="#444">
               <Skeleton height ={250} duration= {2} />
           </SkeletonTheme>

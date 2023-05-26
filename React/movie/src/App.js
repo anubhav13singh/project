@@ -8,7 +8,8 @@ import Movie from './Pages/movies/Movie'
 import Search from './Pages/search/Search'
 import Series from './Pages/series/Series'
 import Footer from './components/footer/Footer'
-import Details from './Pages/details/Details'
+import MovieDetails from './Pages/details/MovieDetails'
+import SeriesDetail from './Pages/details/SeriesDetail'
 
 function App() {
   return (
@@ -16,17 +17,22 @@ function App() {
     <BrowserRouter>
       <Header/>
     <div className='App'>
-      <Container>
+       <Container> 
+
         <Routes>
-          <Route exact path='/' element={<Trending/>}/>
-          <Route exact path='/Movies' element={<Movie/>}/>
-          <Route exact path='/Search' element={<Search/>}/>
-          <Route exact path='/Tv Series' element={<Series/>}/>
-          <Route  path='`/${media_type}/${id}` 'element={<Details/>}/>
+          <Route  path='/' element={<Trending/>}/>
+          <Route  path='/Movies' element={<Movie/>}/>
+          <Route  path='/Search' element={<Search/>}/>
+          <Route  path='/Tv Series' element={<Series/>}/>
+          <Route exact path= '/movie/:id' element={<MovieDetails/>}/>
+          <Route  path='/tv/:id' element={<SeriesDetail/>}/>
+      
 
         </Routes>
 
-      </Container>
+      </ Container>
+
+      
     </div>
     <Footer />
 

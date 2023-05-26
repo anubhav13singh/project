@@ -35,12 +35,16 @@
 **output**
 ![output image](./project7/output/Hosting%20Landing%20Page.png)
 
-[project8](http://127.0.0.1:5500/html%20and%20css/project8/index.html)
+[project8](http://127.0.0.1:5500//html%20and%20css/project8/index.html)
 
 **output**
 ![output image](./project8/output/Main%20Landing%20page.png)
 
+[project9](http://127.0.0.1:5500//html%20and%20css/project8/index.html)
+
 **output**
+![output image](./project9/output/Data%20Analytics%20Landing%20page.png)
+
 [vs clone](http://127.0.0.1:5500//html%20and%20css/vs%20clone/index.html)
 
 not got correct images of vs clone so it is done by some random images

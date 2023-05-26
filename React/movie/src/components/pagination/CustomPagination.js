@@ -4,10 +4,11 @@ import React from 'react'
 // create theme in pagination
 
 
-function CustomPagination({setPage}) {
+function CustomPagination({setPage,numofPages}) {
+// we can pass numofPages manually for ex numofPages=10,whenever numofPages is passed as props it ll retrive its value or else by default numofPages ll be 10
     const handlePage = (page) =>{
-      setPage(page);
-        window.scroll(0,0);
+       setPage(page);
+       window.scroll(0,0);
     }
   return (
     <>
@@ -18,8 +19,12 @@ function CustomPagination({setPage}) {
         marginTop: 15,
     }}>
 
-    <Pagination count= {10} 
-    onChange={(e) => handlePage(e.target.textContent)}/>
+    <Pagination count= {numofPages} 
+    onChange={(e) => handlePage(e.target.textContent)}
+    hideNextButton
+    hidePrevButton
+    color='primary'
+    />
     </div>
     </>
   )

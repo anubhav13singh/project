@@ -1,22 +1,23 @@
 .media{
     display: flex;
     flex-direction: column;
-    width: 220px;
-    /* padding: 5px; */
-    margin: 0px 5px;
+    /* flex-wrap: wrap; */
+    width: 180px;
+    /* padding: 15px; */
+    margin: 0px 15px;
     background-color: #282c34;
     border-radius: 10px;
     position: relative;
     transition: ease;
 }
 .media:hover{
-    background-color: #444343;
-    color: rgb(37, 37, 37);
+    background-color: #1f1e1e;
+    color: rgb(73, 73, 73);
     transform: scale(1.03);
 }
 @media (max-width: 550px){
     .media{
-        width: 46%;
+        width: 45%;
     }
 }
 .poster{
