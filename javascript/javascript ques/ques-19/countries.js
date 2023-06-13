@@ -1,1 +1,1 @@
-let countries = 
+let countries = ['india','australia','newzeland','oman','bulgaria','isreal']

@@ -10,22 +10,22 @@ export const Appcontext = () =>{
     const [randomMeal, SetrandomMeal] = useState([]);
 
 
-    const fetchHomepageMeals = useCallback((searchTerm) =>{
+    const fetchHomepageMeals = (searchTerm) =>{
         axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`)
        .then(res =>{
         // console.log(res.data.meals);
         Setmeals(res.data.meals);
        }
         )
-    },[])
+    }
 
-    const fetchCategory = useCallback(() => {
+    const fetchCategory = () => {
         axios.get(`https://www.themealdb.com/api/json/v1/1/categories.php`)
         .then(res =>{
             // console.log(res.data.categories);
             Setcategories(res.data.categories);
         })
-    }, [])
+    }
 
     const randomcategory = useCallback(() =>{
         axios.get(`https://www.themealdb.com/api/json/v1/1/random.php`)

@@ -5,7 +5,7 @@ import './Navbar.css'
 function Navbar() {
   return (
     <div className='navbar'>
-        <div className='navbar-heading'>
+        <div className='navbar-heading' onClick={() => window.scroll(0,0)}>
             <h1>Meals <span>App</span></h1>
         </div>
         <div className='navbar-link'>

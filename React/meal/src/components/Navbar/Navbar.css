@@ -19,7 +19,7 @@
 }
 .navbar-heading h1{
     margin-left: 20px;
-    font-size: 30px;
+    font-size: 3vw;
 }
 .navbar-heading span{
     color: #f3b542;
@@ -36,8 +36,23 @@ a {
     padding: 10px;
     background-color: rgb(36, 35, 35);
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 2vw;
 }
 a:hover{
     color:  #f3b542;
+}
+@media (max-width:500) {
+    .navbar-heading h1{
+        margin-left: 10px;
+        font-size: 6vw;
+    }
+    a {
+        color: rgb(250, 248, 248);
+        text-decoration: none;
+        margin: 0px 3px;
+        padding: 1px;
+        background-color: rgb(36, 35, 35);
+        border-radius: 5px;
+        font-size: 3vw;
+    }
 }

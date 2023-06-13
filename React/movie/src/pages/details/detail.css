@@ -1,0 +1,51 @@
+.content{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* flex-wrap: wrap; */
+}
+.backdrop img {
+    height: 55vh;
+    width: 50vw;
+    border-radius: 10px;
+}
+
+.original_title{
+    font-size: 25px;
+    font-weight: 800;
+    
+}
+.genre-box{
+    display: flex;
+    margin: 23px 0px;
+}
+.genre{
+    margin: 3px;
+    border: 1px solid rgb(250, 175, 146);
+    border-radius: 10px;
+    padding: 4px 8px;
+}
+.link{
+    border: 1px solid red;
+    width: fit-content;
+    padding: 10px 50px;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin:20px auto;
+    background-color: rgb(248, 72, 72);
+}
+.youtube{
+    color: red;
+    font-size: 25px;
+    align-items: center;
+}
+.overview{
+    font-size: 18px;
+    word-spacing: normal;
+    /* border: 1px solid grey; */border-radius: 20px;
+    padding: 5px 10px 6px 15px;
+    /* margin-top: 50px; */
+    box-shadow: 1px 1px 5px grey;
+}
