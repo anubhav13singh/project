@@ -21,8 +21,6 @@ let navigate = useNavigate();
   },[searchTerm])
 
 
-  // searchTerm coz it ll run rvery time when we type{depedency}
- 
 
   return (
     <>

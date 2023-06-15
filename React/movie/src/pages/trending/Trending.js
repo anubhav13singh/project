@@ -28,6 +28,7 @@ const [numofPages, setNumofPages] = useState()
 
   return (
     <>
+     
         <span className='pageTitle'> Trending</span>
         <div className='trending'>
           {
@@ -44,6 +45,7 @@ const [numofPages, setNumofPages] = useState()
         </div>
         <CustomPagination setPage={setPage}
         numofPages={numofPages}/>
+
     </>
   )
 }

@@ -39,19 +39,60 @@ function SeriesDetails() {
 },[])
   return (
     <>
+ <Box width='100%' color='black' minHeight='75vh'>
 
-       <div className='content'>
+<Box display='flex' flexDirection={{xs:'column' , md:'row'}} gap='20px'>
+
+<Box width={{xs:'100%', md:'55vw'}}>
+<img  src={`https://image.tmdb.org/t/p/w500/${details ? details.backdrop_path : ""}`} />
+</Box>
+
+<Box>
+    
+  <Typography color='whitesmoke' fontSize={{xs:'18px', md:'25px'}} fontWeight='700' >
+    {details? details.original_title : ""}
+  </Typography>
+       
+  <Typography  color='whitesmoke' fontSize={{xs:'15px', md:'20px'}} fontWeight='400' fontStyle='oblique'>Release_Date :
+       { details? details.release_date: ""}
+  </Typography>
+
+  <Typography color='whitesmoke' fontSize={{xs:'15px', md:'20px'}} fontWeight='400' fontStyle='italic' 
+  display='flex' flexDirection='row' gap='10px' 
+  >
+  {details? details.genres.map((g) => 
+  <Box key={g.id}  borderRadius='10px' padding='5px 10px' bgcolor=' gray' margin='7px 1px'
+  >{g.name} </Box>): ""}
+
+  </Typography>
+   
+  <Box fontSize={{xm:'12px', md:'18px'}}
+    word-spacing= 'normal'
+    border= '1px solid grey'
+    borderRadius='20px'
+    padding= '5px 10px 6px 15px'
+    margin={{xs:'30px 0px',md:'10px 0px'}}
+    boxShadow='1px 1px 5px grey'>
+    {details?details.overview: ""}
+   </Box> 
+   
+
+</Box>
+   
+</Box>
+    
+<Box className='link'>
+<Box className='youtube'><AiFillYoutube/></Box>
+<a href={`https://www.youtube.com/watch?v${video}`}> 
+click to watch trailor</a>
+</Box>
+
+</Box>
 
 
-       <div className='backdrop'>
-        <img  src={`https://image.tmdb.org/t/p/w500/${details ? details.backdrop_path : ""}`}/>
-        </div>
+     
 
-        <div>
-            
-          <div className='original_title'>
-            {details? details.original_name : ""}
-           </div>
+        
                
            <h4>Release_Date: {details? details.first_air_date: ""} </h4>
 
@@ -61,31 +102,6 @@ function SeriesDetails() {
                :""}</h5>
           
           
-            <div className='genre-box'>
-          {details? details.genres.map((g) => <div className='genre' key={g.id}>{g.name} </div>): ""}
-          </div>
-        
-           
-            <div className='overview'>
-            {details?details.overview: ""}
-            </div>  
-       
-        </div>
-        
-     </div>
-        
-
-       <div className='link'>
-       <div className='youtube'><AiFillYoutube/></div>
-       <a href={`https://www.youtube.com/watch?v${video}`}> 
-       click to watch trailor</a>
-       </div>
-       
-
-      
-
-       
-
     </>
   )
 }

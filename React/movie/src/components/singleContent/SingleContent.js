@@ -1,38 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import "./singleContent.css"
-import { Badge } from '@mui/material';
-import Skeleton from 'react-loading-skeleton';
-import { SkeletonTheme } from 'react-loading-skeleton';
+import { Badge, Box } from '@mui/material';
+
 import { NavLink } from 'react-router-dom';
 
 const SingleContent =({poster,id,title,date,media_type,vote}) => {
 
-  const[isloading, setIsLoading] = useState(true)
-
-  useEffect(()=>{
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 1500);
-  })
 
   return (
 <>
     {
-      isloading ?
-      <div className='trending'>
-          <SkeletonTheme baseColor = '#202020' highlightColor="#444">
-              <Skeleton height ={250} duration= {2} />
-          </SkeletonTheme>
-      </div>
-      :
+  
       
       <NavLink to= {`/${media_type}/${id}`}>
 
       <div className='media' key={id}>
+
       <Badge  badgeContent={vote} color={vote>6?"primary" : "secondary"}
       // anchorOrigin={}
-       
       />
+       
       
       <img className='poster' src={poster ? `https://image.tmdb.org/t/p/w300/${poster}`:
       "unavailable" }/>
@@ -44,7 +31,7 @@ const SingleContent =({poster,id,title,date,media_type,vote}) => {
       </div>
 
       </NavLink>
-
+   
     }
     </>
     )

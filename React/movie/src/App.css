@@ -1,28 +1,33 @@
 *{
     scroll-behavior: smooth;
+    margin: 0;
 }
 .App{
     width: 100%;
     min-height: 75vh;
     background-color: #2e302e;
     color: aliceblue;
-     padding-top: 90px; 
-    padding-bottom: 70px;
+     padding-top: 20px; 
+    padding-bottom: 40px;
 }
 .pageTitle{
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
+    margin-bottom: 4vh;
     display: flex;
     text-transform: uppercase;
-    justify-content:flex-start;
-    font-size: 2vw;
+    justify-content:center;
+    font-size: 4vh;
+    
 }
 @media (max-width:700px) {
     .App{
-        padding-top: 70px ;
+        padding-top: 10px ;
+        padding-bottom: 40px;
     }
 }
 @media (max-width:700px) {
     .pageTitle{
-    font-size: 5vw;
+    font-size: 3vh;
+    margin-bottom: 25px;
 }
 }
