@@ -17,7 +17,7 @@ function App() {
     <BrowserRouter>
       <Header/>
     <div className='App'>
-       <Container> 
+    
 
         <Routes>
           <Route  path='/' element={<Trending/>}/>
@@ -27,10 +27,10 @@ function App() {
           <Route exact path= '/movie/:id' element={<MovieDetails/>}/>
           <Route  path='/tv/:id' element={<SeriesDetail/>}/>
       
-
         </Routes>
+       
 
-      </ Container>
+
 
       
     </div>

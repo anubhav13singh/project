@@ -38,4 +38,5 @@ const SingleContent =({poster,id,title,date,media_type,vote}) => {
   }
   
   
+
   export default SingleContent;
