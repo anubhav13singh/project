@@ -6,26 +6,28 @@ import Category from './components/Categories/Category'
 import RandomMeal from './components/RandomMeal/RandomMeal'
 import HomePage from './components/HomePage/HomePage'
 import Ingridients from './components/HomePage/Ingridients'
+import AlphaMeal from './components/HomePage/AlphaMeal'
 
 function App() {
   return (
     <div className='App'>
-    <BrowserRouter>
-     <Navbar />
+      <BrowserRouter>
+        <Navbar />
 
-      <Routes>
+        <Routes>
 
-      <Route exact path='/' element={<HomePage/>}/>
-      <Route exact path='/Category' element={<Category/>}/>
-      <Route exact path='/RandomMeal' element={<RandomMeal/>}/>
-      <Route exact path='/:id' element={<Ingridients/>}/>
+          <Route exact path='/' element={<HomePage />} />
+          <Route exact path='/al' element={<AlphaMeal />} />
+          <Route exact path='/Category' element={<Category />} />
+          <Route exact path='/RandomMeal' element={<RandomMeal />} />
+          <Route exact path='/:id' element={<Ingridients />} />
 
-      
-      </Routes>
-      
 
-    <Footer />
-    </BrowserRouter>
+        </Routes>
+
+
+        <Footer />
+      </BrowserRouter>
 
     </div>
   )
